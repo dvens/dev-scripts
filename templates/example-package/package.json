@@ -38,11 +38,11 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/dvens/atomify.git"
+        "url": "git+https://github.com/dvens/dev-scripts.git"
     },
     "bugs": {
-        "url": "https://github.com/dvens/atomify/issues"
+        "url": "https://github.com/dvens/dev-scripts/issues"
     },
-    "homepage": "https://github.com/dvens/atomify",
+    "homepage": "https://github.com/dvens/dev-scripts",
     "gitHead": "e8eebe58db6e017fc19503283b858bac4ce11e42"
 }
