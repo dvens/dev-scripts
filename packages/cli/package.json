@@ -9,6 +9,9 @@
     "directories": {
         "test": "test"
     },
+    "bin": {
+        "dev-scripts": "./bin/dev-scripts.js"
+      },
     "engines": {
         "node": ">=10.18.1",
         "yarn": "^1.22.0"
