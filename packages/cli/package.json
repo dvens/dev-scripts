@@ -1,0 +1,48 @@
+{
+    "name": "@dev-scripts/cli",
+    "version": "1.2.2",
+    "description": "Dev scripts cli",
+    "url": "https://github.com/dvens/dev-scripts",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "typings": "./dist/index.d.ts",
+    "directories": {
+        "test": "test"
+    },
+    "engines": {
+        "node": ">=10.18.1",
+        "yarn": "^1.22.0"
+    },
+    "scripts": {
+        "build": "tsc -p tsconfig.json",
+        "checksize": "rollup -c ; rm ./dist/index.bundled.js",
+        "regen-package-lock": "rm -rf node_modules package-lock.json; npm install"
+    },
+    "author": {
+        "name": "Dylan Vens"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.2.3",
+        "@babel/plugin-proposal-class-properties": "^7.2.3",
+        "@babel/plugin-proposal-decorators": "^7.2.3",
+        "@babel/plugin-transform-typescript": "^7.2.0",
+        "rollup": "^0.64.1",
+        "rollup-plugin-filesize": "^4.0.1",
+        "rollup-plugin-node-resolve": "^3.4.0",
+        "rollup-plugin-terser": "^1.0.1",
+        "typescript": "^3.4.1",
+        "uglify-es": "^3.3.9"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dvens/atomify.git"
+    },
+    "bugs": {
+        "url": "https://github.com/dvens/atomify/issues"
+    },
+    "homepage": "https://github.com/dvens/atomify",
+    "gitHead": "e8eebe58db6e017fc19503283b858bac4ce11e42"
+}
