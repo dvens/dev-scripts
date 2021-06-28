@@ -1,8 +1,9 @@
 import { alias } from './alias';
-import { devConfig } from './config';
+import { devConfig, projectDirectory } from './config';
 import { createCompilationPromise, logMessage } from './utilities/compiler-promise';
 import { ensureDirectoryExistence } from './utilities/ensure-directory-existence';
 import { getEnv } from './utilities/env';
+import { findSupportedBrowsers } from './utilities/get-browser-list';
 import { getDefaultMode } from './utilities/get-default-mode';
 import { lookup, manifestHelper } from './utilities/manifest-helper';
 import { normalizePath, removeDoubleSlash } from './utilities/normalize-path';
@@ -24,4 +25,6 @@ export {
     alias,
     getEnv,
     ensureDirectoryExistence,
+    findSupportedBrowsers,
+    projectDirectory,
 };
