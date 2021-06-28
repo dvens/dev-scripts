@@ -1,6 +1,6 @@
 {
     "name": "@dev-scripts/webpack",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Dev scripts Webpack configuration",
     "url": "https://github.com/dvens/dev-scripts",
     "license": "MIT",
@@ -45,7 +45,7 @@
     "homepage": "https://github.com/dvens/dev-scripts",
     "gitHead": "e8eebe58db6e017fc19503283b858bac4ce11e42",
     "dependencies": {
-        "terser-webpack-plugin": "^5.1.4",
-        "@dev-scripts/shared": "0.1.0"
+        "@dev-scripts/shared": "^0.1.1",
+        "terser-webpack-plugin": "^5.1.4"
     }
 }
