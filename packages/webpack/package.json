@@ -43,5 +43,9 @@
         "url": "https://github.com/dvens/dev-scripts/issues"
     },
     "homepage": "https://github.com/dvens/dev-scripts",
-    "gitHead": "e8eebe58db6e017fc19503283b858bac4ce11e42"
+    "gitHead": "e8eebe58db6e017fc19503283b858bac4ce11e42",
+    "dependencies": {
+        "terser-webpack-plugin": "^5.1.4",
+        "@dev-scripts/shared": "0.1.0"
+    }
 }
