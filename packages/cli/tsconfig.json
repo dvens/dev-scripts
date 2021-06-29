@@ -5,7 +5,10 @@
         "baseUrl": ".",
     },
     "include": [
-        "src/**/*.ts"
+        "src/*.ts"
     ],
-    "exclude": []
+    "typeRoots": [
+        "./types"
+    ],
+    "exclude": ["bin/*.js"]
 }
