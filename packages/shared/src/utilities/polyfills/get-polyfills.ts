@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { minify } from 'terser';
 
-import { PolyfillLoader } from './../../types/config.types';
+import { PolyfillLoader } from '../../types/config.types';
 
 export async function getPolyfills(config?: PolyfillLoader) {
     if (!config) return null;
