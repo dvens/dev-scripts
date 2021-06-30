@@ -5,7 +5,7 @@ import {
     projectDirectory,
 } from '@dev-scripts/shared';
 import { create } from 'browser-sync';
-import express from 'express';
+import * as express from 'express';
 import { resolve } from 'path';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
