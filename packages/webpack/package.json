@@ -1,6 +1,6 @@
 {
     "name": "@dev-scripts/webpack",
-    "version": "0.1.10",
+    "version": "0.1.11",
     "description": "Dev scripts Webpack configuration",
     "url": "https://github.com/dvens/dev-scripts",
     "license": "MIT",
@@ -61,6 +61,7 @@
         "clean-webpack-plugin": "^3.0.0",
         "copy-webpack-plugin": "^8.1.1",
         "cross-env": "^7.0.0",
+        "css-loader": "^5.2.0",
         "eslint": "^7.29.0",
         "eslint-webpack-plugin": "^2.5.4",
         "file-loader": "^6.2.0",
@@ -69,7 +70,6 @@
         "node-sass": "^5.0.0",
         "postcss-loader": "^5.2.0",
         "prettier": "^2.2.1",
-        "css-loader": "^5.2.0",
         "sass-lint": "^1.13.1",
         "sass-lint-webpack": "^1.0.2",
         "sass-loader": "^11.0.1",
