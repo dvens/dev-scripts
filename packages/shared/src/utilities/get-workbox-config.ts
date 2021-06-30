@@ -1,13 +1,13 @@
-import path from 'path';
+import { join } from 'path';
 
 import { devConfig } from '../config';
 
 function getWorkboxConfig() {
-    const workboxConfigPath = path.join(devConfig.root, 'workbox-config.js');
+    const workboxConfigPath = join(devConfig.root, 'workbox-config.js');
 
     let defaultWorboxConfig = {
         // where to output the generated sw
-        swDest: path.join(devConfig.dist, 'sw.js'),
+        swDest: join(devConfig.dist, 'sw.js'),
         // directory to match patterns against to be precached
         globDirectory: devConfig.dist,
         // cache any html js and css by default

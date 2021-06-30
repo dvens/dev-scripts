@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import fs from 'fs';
+import { readFileSync } from 'fs';
 
 interface Options {
     cache?: boolean;
@@ -18,7 +18,7 @@ function loadManifest() {
     if (manifest && defaults.cache) return manifest;
 
     try {
-        return JSON.parse(fs.readFileSync(defaults.manifestPath, 'utf8'));
+        return JSON.parse(readFileSync(defaults.manifestPath, 'utf8'));
     } catch (err) {
         throw new Error('Asset Manifest could not be loaded.');
     }

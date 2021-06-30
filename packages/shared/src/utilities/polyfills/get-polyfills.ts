@@ -1,6 +1,6 @@
 import crypto from 'crypto';
-import fs from 'fs';
-import path from 'path';
+import { existsSync, readFileSync, statSync } from 'fs';
+import { resolve } from 'path';
 import { minify } from 'terser';
 
 import { PolyfillLoader } from '../../types/config.types';
@@ -62,12 +62,12 @@ export async function getPolyfills(config?: PolyfillLoader) {
             throw new Error(`A polyfill should have a name and a path property.`);
         }
 
-        const codePath = path.resolve(instruction.path);
-        if (!codePath || !fs.existsSync(codePath) || !fs.statSync(codePath).isFile()) {
+        const codePath = resolve(instruction.path);
+        if (!codePath || !existsSync(codePath) || !statSync(codePath).isFile()) {
             throw new Error(`Could not find a file at ${instruction.path}`);
         }
 
-        let code = fs.readFileSync(codePath, 'utf-8');
+        let code = readFileSync(codePath, 'utf-8');
 
         if (config.polyfills.minify) {
             const minified = await minify(code);

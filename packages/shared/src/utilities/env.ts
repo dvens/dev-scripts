@@ -1,5 +1,5 @@
-import fs from 'fs';
-import path from 'path';
+import { existsSync, realpathSync } from 'fs';
+import { delimiter, isAbsolute, resolve } from 'path';
 
 import { devConfig } from '../config';
 
@@ -18,19 +18,19 @@ const dotenvFiles = [
 ].filter(Boolean);
 
 dotenvFiles.forEach((dotenvFile) => {
-    if (dotenvFile && fs.existsSync(dotenvFile)) {
+    if (dotenvFile && existsSync(dotenvFile)) {
         require('dotenv').config({
             path: dotenvFile,
         });
     }
 });
 
-const appDirectory = fs.realpathSync(process.cwd());
+const appDirectory = realpathSync(process.cwd());
 process.env.NODE_PATH = (process.env.NODE_PATH || '')
-    .split(path.delimiter)
-    .filter((folder) => folder && !path.isAbsolute(folder))
-    .map((folder) => path.resolve(appDirectory, folder))
-    .join(path.delimiter);
+    .split(delimiter)
+    .filter((folder) => folder && !isAbsolute(folder))
+    .map((folder) => resolve(appDirectory, folder))
+    .join(delimiter);
 
 export const getEnv = () => {
     const raw = {

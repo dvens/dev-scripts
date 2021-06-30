@@ -1,4 +1,4 @@
-import fs from 'fs';
+import { readFileSync } from 'fs';
 
 import { PolyfillLoader } from './../types/config.types';
 import { lookup } from './manifest-helper';
@@ -10,7 +10,7 @@ function getPolyfillManifest(dir: string) {
     if (polyfillManifest) return polyfillManifest;
 
     try {
-        return JSON.parse(fs.readFileSync(dir, 'utf8'));
+        return JSON.parse(readFileSync(dir, 'utf8'));
     } catch (err) {
         throw new Error('Polyfill Manifest could not be loaded.');
     }
