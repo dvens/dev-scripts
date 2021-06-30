@@ -3,6 +3,7 @@ const { program } = require('commander');
 
 const packageJson = require('../package.json');
 const semver = require('semver');
+const { start } = require('../dist/start');
 
 program.version(packageJson.version);
 
@@ -32,8 +33,7 @@ program
     .description('alias of "npm run start" in the current project')
     .allowUnknownOption()
     .action(() => {
-        process.env.NODE_ENV = 'production';
-        require('../dist/start')();
+        start();
     });
 
 //https://github.com/vuejs/vue-cli/blob/dev/packages/%40vue/cli/bin/vue.js
