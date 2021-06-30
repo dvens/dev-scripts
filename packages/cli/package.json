@@ -1,6 +1,6 @@
 {
     "name": "@dev-scripts/cli",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "description": "Dev scripts cli",
     "url": "https://github.com/dvens/dev-scripts",
     "license": "MIT",
@@ -38,7 +38,7 @@
         "uglify-es": "^3.3.9"
     },
     "dependencies": {
-        "@dev-scripts/shared": "^0.1.4",
+        "@dev-scripts/shared": "^0.1.5",
         "@types/browser-sync": "^2.26.1",
         "@types/favicons": "^6.2.1",
         "@types/prettier": "^2.3.0",
