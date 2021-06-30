@@ -3,12 +3,6 @@ import { delimiter, isAbsolute, resolve } from 'path';
 
 import { devConfig } from '../config';
 
-if (!process.env.NODE_ENV) {
-    throw new Error(
-        'The process.env.NODE_ENV environment variable is required but was not specified.',
-    );
-}
-
 // https://github.com/bkeepers/dotenv#what-other-env-files-can-i-use
 const dotenvFiles = [
     `${devConfig.dotenv}.${process.env.NODE_ENV}.local`,
