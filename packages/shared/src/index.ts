@@ -9,6 +9,7 @@ import getWorkboxConfig from './utilities/get-workbox-config';
 import { lookup, manifestHelper } from './utilities/manifest-helper';
 import { normalizePath, removeDoubleSlash } from './utilities/normalize-path';
 import run, { format } from './utilities/run';
+import { getScripts } from './utilities/scripts';
 
 export * from './utilities/polyfills';
 
@@ -29,4 +30,5 @@ export {
     findSupportedBrowsers,
     projectDirectory,
     getWorkboxConfig,
+    getScripts,
 };
