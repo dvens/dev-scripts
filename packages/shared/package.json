@@ -1,6 +1,6 @@
 {
     "name": "@dev-scripts/shared",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "description": "Dev scripts shared packages with utils,types and configuration",
     "url": "https://github.com/dvens/dev-scripts",
     "license": "MIT",
