@@ -1,4 +1,4 @@
-import crypto from 'crypto';
+import { createHash } from 'crypto';
 import { existsSync, readFileSync, statSync } from 'fs';
 import { resolve } from 'path';
 import { minify } from 'terser';
@@ -94,5 +94,5 @@ export async function getPolyfills(config?: PolyfillLoader) {
 }
 
 function createContentHash(content: string) {
-    return crypto.createHash('md4').update(content).digest('hex');
+    return createHash('md4').update(content).digest('hex');
 }

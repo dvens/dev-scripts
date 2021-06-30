@@ -1,8 +1,8 @@
 import { devConfig } from '@dev-scripts/shared';
-import del from 'del';
+import { sync } from 'del';
 
 async function clean() {
-    del.sync(devConfig.dist);
+    sync(devConfig.dist);
 }
 
 export default clean;

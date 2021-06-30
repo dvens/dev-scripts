@@ -1,7 +1,7 @@
 import { devConfig, projectDirectory } from '@dev-scripts/shared';
 import favicons from 'favicons';
 import { writeFileSync } from 'fs';
-import prettier from 'prettier';
+import { format, resolveConfig, resolveConfigFile } from 'prettier';
 
 let config = {
     source: '',
@@ -36,10 +36,10 @@ async function generateFavicons() {
             })
             .join('\n');
 
-        prettier.resolveConfigFile().then((filePath) => {
+        resolveConfigFile().then((filePath) => {
             if (filePath) {
-                prettier.resolveConfig(filePath).then((options) => {
-                    const formatted = prettier.format(
+                resolveConfig(filePath).then((options) => {
+                    const formatted = format(
                         `
                     import { Fragment, h } from '@atomify/jsx';
                     export const renderFavicons = () => {

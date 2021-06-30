@@ -3,7 +3,7 @@ import CopyPlugin from 'copy-webpack-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import SassLintPlugin from 'sass-lint-webpack';
-import webpack from 'webpack';
+import { DefinePlugin } from 'webpack';
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
 const env = getEnv();
@@ -40,8 +40,8 @@ export const getPlugins = (isClient: boolean = true, manifestSharedSeed = {}) =>
                 writeToFileEmit: true,
             }),
 
-        new webpack.DefinePlugin(env.stringified),
-        new webpack.DefinePlugin({
+        new DefinePlugin(env.stringified),
+        new DefinePlugin({
             __SERVER__: !isClient,
             __BROWSER__: isClient,
         }),

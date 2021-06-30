@@ -4,14 +4,14 @@ import {
     logMessage,
     projectDirectory,
 } from '@dev-scripts/shared';
-import browserSync from 'browser-sync';
+import { create } from 'browser-sync';
 import express from 'express';
 import { resolve } from 'path';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 
-const browserSyncServer = browserSync.create();
+const browserSyncServer = create();
 const server = express();
 
 let webpackConfig: any;

@@ -1,4 +1,4 @@
-import chalk from 'chalk';
+import { magenta } from 'chalk';
 
 export function format(time: Date) {
     return time.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1');
@@ -15,8 +15,8 @@ function run(fn: any, options = undefined) {
         const time = end.getTime() - start.getTime();
 
         console.log(
-            chalk.magenta.bold(`[${format(end)}] Finished`),
-            chalk.magenta(`'${task.name}${options ? ` (${options})` : ''}' after ${time} ms`),
+            magenta.bold(`[${format(end)}] Finished`),
+            magenta(`'${task.name}${options ? ` (${options})` : ''}' after ${time} ms`),
         );
 
         return resolution;
