@@ -1,10 +1,10 @@
 import { devConfig, getDefaultMode, getEnv, normalizePath } from '@dev-scripts/shared';
-import CopyPlugin from 'copy-webpack-plugin';
-import ESLintPlugin from 'eslint-webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import SassLintPlugin from 'sass-lint-webpack';
+import * as CopyPlugin from 'copy-webpack-plugin';
+import * as MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import * as SassLintPlugin from 'sass-lint-webpack';
 import { DefinePlugin } from 'webpack';
 
+const ESLintPlugin = require('eslint-webpack-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
 const env = getEnv();

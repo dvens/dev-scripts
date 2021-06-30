@@ -16,7 +16,7 @@ try {
     /** noop */
 }
 
-async function generateFavicons() {
+export async function generateFavicons() {
     if (!config.source) return;
 
     await favicons(config.source, config.faviconsPlugin, async (error, response) => {
@@ -59,5 +59,3 @@ async function generateFavicons() {
         });
     });
 }
-
-export default generateFavicons;

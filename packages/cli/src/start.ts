@@ -30,7 +30,7 @@ const watchOptions = {
     // ignored: /node_modules/,
 };
 
-async function start() {
+export async function start() {
     const [clientConfig, serverConfig] = webpackConfig;
     const serverEntry = resolve(devConfig.serverDist, 'server.js');
 
@@ -172,5 +172,3 @@ async function start() {
         logMessage(error, 'error');
     }
 }
-
-export default start;

@@ -18,7 +18,7 @@ try {
     );
 }
 
-async function generatePolyfills() {
+export async function generatePolyfills() {
     const polyfills = (await getPolyfills(config)) as any[];
 
     if (IS_PRODUCTION) {
@@ -38,5 +38,3 @@ async function generatePolyfills() {
 
     await writeFileSync(`${data.manifestDir}polyfills-manifest.json`, JSON.stringify(data));
 }
-
-export default generatePolyfills;

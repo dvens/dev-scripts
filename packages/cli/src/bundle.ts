@@ -16,7 +16,7 @@ try {
 /**
  * Creates application bundles from the source files.
  */
-function bundle() {
+export function bundle() {
     return new Promise((resolve, reject) => {
         webpack(webpackConfig).run((err, stats) => {
             if (err) {
@@ -33,5 +33,3 @@ function bundle() {
         });
     });
 }
-
-export default bundle;

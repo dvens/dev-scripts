@@ -2,7 +2,7 @@ import { devConfig, getWorkboxConfig } from '@dev-scripts/shared';
 import { existsSync } from 'fs';
 import { generateSW, injectManifest } from 'workbox-build';
 
-async function generateServiceWorker() {
+export async function generateServiceWorker() {
     const workboxConfig = getWorkboxConfig();
 
     if (!devConfig.injectManifest) {
@@ -16,5 +16,3 @@ async function generateServiceWorker() {
         console.log(`Generated, which will precache ${count} files, totaling ${size} bytes.`);
     }
 }
-
-export default generateServiceWorker;
