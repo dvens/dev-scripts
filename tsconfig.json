@@ -3,8 +3,6 @@
         "alwaysStrict": true,
         "target": "es5",
         "module": "commonjs",
-        "moduleResolution": "node",
-        "lib": ["esnext.array", "esnext", "es2017", "dom"],
         "declaration": true,
         "declarationMap": true,
         "sourceMap": true,

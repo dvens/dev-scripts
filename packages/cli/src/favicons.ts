@@ -1,6 +1,6 @@
 import { devConfig, projectDirectory } from '@dev-scripts/shared';
 import favicons from 'favicons';
-import fs from 'fs';
+import { writeFileSync } from 'fs';
 import prettier from 'prettier';
 
 let config = {
@@ -23,11 +23,11 @@ async function generateFavicons() {
         if (error) throw new Error(error.message);
 
         response.images.forEach((image) => {
-            fs.writeFileSync(`${config.folder}/${image.name}`, image.contents);
+            writeFileSync(`${config.folder}/${image.name}`, image.contents);
         });
 
         response.files.forEach((file) => {
-            fs.writeFileSync(`${config.folder}/${file.name}`, file.contents);
+            writeFileSync(`${config.folder}/${file.name}`, file.contents);
         });
 
         const metaTags = response.html
@@ -53,7 +53,7 @@ async function generateFavicons() {
                         options || {},
                     );
 
-                    fs.writeFileSync(config.outputFile, formatted);
+                    writeFileSync(config.outputFile, formatted);
                 });
             }
         });

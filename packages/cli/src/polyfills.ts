@@ -5,7 +5,7 @@ import {
     getPolyfills,
     projectDirectory,
 } from '@dev-scripts/shared';
-import fs from 'fs';
+import { writeFileSync } from 'fs';
 
 const IS_PRODUCTION = getDefaultMode() === 'production';
 let config: any = null;
@@ -36,7 +36,7 @@ async function generatePolyfills() {
         })),
     };
 
-    await fs.writeFileSync(`${data.manifestDir}polyfills-manifest.json`, JSON.stringify(data));
+    await writeFileSync(`${data.manifestDir}polyfills-manifest.json`, JSON.stringify(data));
 }
 
 export default generatePolyfills;

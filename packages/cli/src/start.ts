@@ -6,7 +6,7 @@ import {
 } from '@dev-scripts/shared';
 import browserSync from 'browser-sync';
 import express from 'express';
-import path from 'path';
+import { resolve } from 'path';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
@@ -32,7 +32,7 @@ const watchOptions = {
 
 async function start() {
     const [clientConfig, serverConfig] = webpackConfig;
-    const serverEntry = path.resolve(devConfig.serverDist, 'server.js');
+    const serverEntry = resolve(devConfig.serverDist, 'server.js');
 
     clientConfig.entry.main = [`webpack-hot-middleware/client`, ...clientConfig.entry.main];
 

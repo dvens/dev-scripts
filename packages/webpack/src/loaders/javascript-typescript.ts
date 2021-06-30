@@ -1,8 +1,8 @@
 import { findSupportedBrowsers, getDefaultMode, projectDirectory } from '@dev-scripts/shared';
-import fs from 'fs';
+import { existsSync } from 'fs';
 
 const extendFilePath = `${projectDirectory}/babel.extend.js`;
-const hasExtendFile = fs.existsSync(extendFilePath);
+const hasExtendFile = existsSync(extendFilePath);
 
 const configureBabelLoader = ({
     includedPackages = [],

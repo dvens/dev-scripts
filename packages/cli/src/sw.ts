@@ -1,5 +1,5 @@
 import { devConfig, getWorkboxConfig } from '@dev-scripts/shared';
-import fs from 'fs';
+import { existsSync } from 'fs';
 import { generateSW, injectManifest } from 'workbox-build';
 
 async function generateServiceWorker() {
@@ -9,7 +9,7 @@ async function generateServiceWorker() {
         const { count, size } = await generateSW(workboxConfig);
         console.log(`Generated, which will precache ${count} files, totaling ${size} bytes.`);
     } else {
-        if (!workboxConfig.swSrc && fs.existsSync(workboxConfig.swSrc))
+        if (!workboxConfig.swSrc && existsSync(workboxConfig.swSrc))
             throw new Error('Please add a valid Service Worker Source');
 
         const { count, size } = await injectManifest(workboxConfig);

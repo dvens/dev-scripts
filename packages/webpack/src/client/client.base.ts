@@ -1,6 +1,6 @@
 import { devConfig, getDefaultMode, normalizePath } from '@dev-scripts/shared';
 // utilities
-import path from 'path';
+import { join } from 'path';
 
 // Loaders
 import fontsLoader from '../loaders/fonts-loader';
@@ -60,7 +60,7 @@ export const createClientBaseConfig = (options: ClientBase) => {
         output: {
             filename: normalizePath(outputFilename),
             chunkFilename: normalizePath(outputChunkFilename),
-            path: path.join(devConfig.clientDist, devConfig.publicPath),
+            path: join(devConfig.clientDist, devConfig.publicPath),
             publicPath: devConfig.publicPath,
         },
     };
