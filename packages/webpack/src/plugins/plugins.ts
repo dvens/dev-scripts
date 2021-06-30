@@ -4,6 +4,7 @@ import ESLintPlugin from 'eslint-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import SassLintPlugin from 'sass-lint-webpack';
 import { DefinePlugin } from 'webpack';
+
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
 const env = getEnv();

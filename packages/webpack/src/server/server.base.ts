@@ -1,5 +1,5 @@
 import { devConfig, normalizePath } from '@dev-scripts/shared';
-import nodeExternals from 'webpack-node-externals';
+import * as nodeExternals from 'webpack-node-externals';
 
 // Loaders
 import fontsLoader from '../loaders/fonts-loader';

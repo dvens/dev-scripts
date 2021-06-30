@@ -1,5 +1,5 @@
 import { writeFileSync } from 'fs';
-import mkdirp from 'mkdirp';
+import * as mkdirp from 'mkdirp';
 import { PolyfillLoader } from 'src/types/config.types';
 
 export async function copyPolyfills(

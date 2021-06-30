@@ -1,5 +1,5 @@
 import { projectDirectory } from '@dev-scripts/shared';
-import webpack from 'webpack';
+import * as webpack from 'webpack';
 
 let webpackConfig: any;
 

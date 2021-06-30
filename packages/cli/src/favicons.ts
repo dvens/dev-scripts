@@ -1,5 +1,5 @@
 import { devConfig, projectDirectory } from '@dev-scripts/shared';
-import favicons from 'favicons';
+import * as favicons from 'favicons';
 import { writeFileSync } from 'fs';
 import { format, resolveConfig, resolveConfigFile } from 'prettier';
 

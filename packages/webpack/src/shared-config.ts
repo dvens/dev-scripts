@@ -1,5 +1,5 @@
 import { alias, devConfig, getDefaultMode } from '@dev-scripts/shared';
-import TerserPlugin from 'terser-webpack-plugin';
+import * as TerserPlugin from 'terser-webpack-plugin';
 
 const isVerbose = process.argv.includes('--verbose');
 

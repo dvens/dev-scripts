@@ -1,4 +1,5 @@
-import browserslist, { defaults } from 'browserslist';
+import { defaults } from 'browserslist';
+import * as browserslist from 'browserslist';
 
 const browsersListConfig = [
     'last 2 Chrome major versions',
