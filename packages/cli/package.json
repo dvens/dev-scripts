@@ -1,6 +1,6 @@
 {
     "name": "@dev-scripts/cli",
-    "version": "0.1.12",
+    "version": "0.1.11",
     "description": "Dev scripts cli",
     "url": "https://github.com/dvens/dev-scripts",
     "license": "MIT",
@@ -57,7 +57,7 @@
         "semver": "^7.3.5",
         "typescript": "^4.2.3",
         "webpack": "5.10.0",
-        "webpack-dev-middleware": "^5.0.0",
+        "webpack-dev-middleware": "^4.1.0",
         "webpack-hot-middleware": "^2.25.0",
         "workbox-build": "^6.1.5"
     },

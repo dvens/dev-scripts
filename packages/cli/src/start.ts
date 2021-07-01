@@ -7,10 +7,9 @@ import {
 import { create } from 'browser-sync';
 import * as express from 'express';
 import { resolve } from 'path';
-
-import webpack = require('webpack');
-import webpackDevMiddleware = require('webpack-dev-middleware');
-import webpackHotMiddleware = require('webpack-hot-middleware');
+import * as webpack from 'webpack';
+import * as webpackDevMiddleware from 'webpack-dev-middleware';
+import * as webpackHotMiddleware from 'webpack-hot-middleware';
 
 const browserSyncServer = create();
 const server = express();
