@@ -43,7 +43,6 @@
         "dotenv": "^8.2.0",
         "intersection-observer": "^0.7.0",
         "mkdirp": "^1.0.4",
-        "ora": "5.4.1",
         "regenerator-runtime": "^0.13.3",
         "terser": "^5.6.1",
         "whatwg-fetch": "^3.0.0"

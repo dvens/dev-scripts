@@ -1,4 +1,4 @@
-import * as ora from 'ora';
+import { magenta } from 'chalk';
 
 export function format(time: Date) {
     return time.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1');
@@ -8,18 +8,16 @@ function run(fn: any, options = undefined) {
     const task = typeof fn.default === 'undefined' ? fn : fn.default;
     const start = new Date();
 
-    const spinner = ora(
-        `[${format(start)}] Starting '${task.name}${options ? ` (${options})` : ''}'...`,
-    ).start();
+    console.log(`[${format(start)}] Starting '${task.name}${options ? ` (${options})` : ''}'...`);
 
     return task(options).then((resolution: any) => {
         const end = new Date();
         const time = end.getTime() - start.getTime();
 
-        spinner.text = `[${format(end)}] Finished '${task.name}${
-            options ? ` (${options})` : ''
-        }' after ${time} ms`;
-        spinner.stop();
+        console.log(
+            magenta.bold(`[${format(end)}] Finished`),
+            magenta(`'${task.name}${options ? ` (${options})` : ''}' after ${time} ms`),
+        );
 
         return resolution;
     });
