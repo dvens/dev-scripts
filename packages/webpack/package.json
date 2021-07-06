@@ -1,6 +1,6 @@
 {
     "name": "@dev-scripts/webpack",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "Dev scripts Webpack configuration",
     "url": "https://github.com/dvens/dev-scripts",
     "license": "MIT",
@@ -50,7 +50,7 @@
         "@babel/plugin-syntax-import-meta": "^7.10.4",
         "@babel/polyfill": "7.12.1",
         "@babel/preset-env": "7.13.12",
-        "@dev-scripts/shared": "^0.1.8",
+        "@dev-scripts/shared": "^0.1.9",
         "@types/copy-webpack-plugin": "^8.0.0",
         "@types/mini-css-extract-plugin": "^1.4.3",
         "@types/terser-webpack-plugin": "^5.0.3",
