@@ -30,7 +30,7 @@ module.exports = {
         '@typescript-eslint/no-unused-vars': [
             'warn',
             {
-                argsIgnorePattern: '^_|req|res|next|err|ctx|args|context|info',
+                argsIgnorePattern: '^_|req|res|next|err|ctx|args|context|info|h',
             },
         ],
         '@typescript-eslint/no-object-literal-type-assertion': 'off',
