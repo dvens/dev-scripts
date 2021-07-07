@@ -74,7 +74,7 @@
         "prettier": "^2.2.1",
         "sass-lint": "^1.13.1",
         "sass-lint-webpack": "^1.0.2",
-        "sass-loader": "^11.0.1",
+        "sass-loader": "^10.1.1",
         "style-loader": "^2.0.0",
         "terser-webpack-plugin": "^5.1.4",
         "to-string-loader": "^1.1.6",
