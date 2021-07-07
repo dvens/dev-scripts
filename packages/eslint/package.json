@@ -1,6 +1,6 @@
 {
     "name": "@dev-scripts/eslint",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Dev scripts eslint config",
     "url": "https://github.com/dvens/dev-scripts",
     "license": "MIT",
