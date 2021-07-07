@@ -4,10 +4,6 @@
     "workspaces": [
         "packages/*"
     ],
-    "engines": {
-        "node": ">=10.18.1",
-        "yarn": "^1.22.0"
-    },
     "scripts": {
         "build": "lerna run build",
         "prepublishOnly": "lerna run build",

@@ -13,10 +13,6 @@
         "checksize": "rollup -c ; rm ./dist/index.bundled.js",
         "regen-package-lock": "rm -rf node_modules package-lock.json; npm install"
     },
-    "engines": {
-        "node": ">=10.18.1",
-        "yarn": "^1.22.0"
-    },
     "author": {
         "name": "Dylan Vens"
     },

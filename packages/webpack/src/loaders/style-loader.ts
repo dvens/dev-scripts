@@ -1,5 +1,5 @@
 import { getDefaultMode } from '@dev-scripts/shared';
-import * as MiniCssExtractPlugin from 'mini-css-extract-plugin';
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const isDevelopment = getDefaultMode() === 'development';
 
