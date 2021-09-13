@@ -1,6 +1,6 @@
 {
     "name": "@dev-scripts/webpack",
-    "version": "0.3.9",
+    "version": "0.3.10",
     "description": "Dev scripts Webpack configuration",
     "url": "https://github.com/dvens/dev-scripts",
     "license": "MIT",
