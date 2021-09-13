@@ -1,9 +1,8 @@
-import { devConfig, removeDoubleSlash } from '@dev-scripts/shared';
+import { devConfig, normalizePath } from '@dev-scripts/shared';
 const fontsLoader = (isClient = true) => {
     const defaultOptions = {
-        name: '[name].[ext]',
-        publicPath: removeDoubleSlash(`${devConfig.publicPath}${devConfig.fontsOutputPath}`),
-        outputPath: removeDoubleSlash(`${devConfig.publicPath}${devConfig.fontsOutputPath}`),
+        name: devConfig.contenthash ? '[name].[contenthash].[ext]' : '[name].[ext]',
+        outputPath: normalizePath(devConfig.fontsOutputPath),
         emitFile: isClient,
     };
 

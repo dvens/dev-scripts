@@ -21,7 +21,7 @@ export interface ClientBase {
 }
 
 export const createClientBaseConfig = (options: ClientBase) => {
-    const contenthash = isProduction ? '.[contenthash]' : '';
+    const contenthash = isProduction && devConfig.contenthash ? '.[contenthash]' : '';
     const outputFilename = `${devConfig.jsOutputPath}[name]${contenthash}.js`;
     const outputChunkFilename = `${devConfig.jsOutputPath}${
         options.legacy ? `chunks/${devConfig.legacyPrefix}` : 'chunks/'

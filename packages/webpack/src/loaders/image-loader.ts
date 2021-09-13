@@ -1,11 +1,10 @@
-import { devConfig, getDefaultMode, removeDoubleSlash } from '@dev-scripts/shared';
+import { devConfig, getDefaultMode, normalizePath } from '@dev-scripts/shared';
 const isDevelopment = getDefaultMode() === 'development';
 
 const imageLoader = (isClient = true) => {
     const defaultOptions = {
-        name: '[name].[ext]',
-        publicPath: removeDoubleSlash(`${devConfig.publicPath}${devConfig.imagesOutputPath}`),
-        outputPath: removeDoubleSlash(`${devConfig.publicPath}${devConfig.imagesOutputPath}`),
+        name: devConfig.contenthash ? '[name].[contenthash].[ext]' : '[name].[ext]',
+        outputPath: normalizePath(devConfig.imagesOutputPath),
         emitFile: isClient,
     };
 

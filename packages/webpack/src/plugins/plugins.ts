@@ -26,12 +26,16 @@ export const getPlugins = (isClient: boolean = true, manifestSharedSeed = {}) =>
             new MiniCssExtractPlugin({
                 filename: normalizePath(
                     `${devConfig.cssOutputPath}${
-                        isDevelopment ? '[name].css' : '[name].[contenthash].css'
+                        isDevelopment || !devConfig.contenthash
+                            ? '[name].css'
+                            : '[name].[contenthash].css'
                     }`,
                 ),
                 chunkFilename: normalizePath(
                     `${devConfig.cssOutputPath}${
-                        isDevelopment ? '[id].css' : '[id].[contenthash].css'
+                        isDevelopment || !devConfig.contenthash
+                            ? '[id].css'
+                            : '[id].[contenthash].css'
                     }`,
                 ),
             }),
