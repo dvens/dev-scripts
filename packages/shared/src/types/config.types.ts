@@ -53,6 +53,7 @@ export interface Config {
 
     // Webpack copy config
     copy: Record<string, unknown> | null;
+    contenthash: boolean;
 }
 
 export type Polyfill = Array<{

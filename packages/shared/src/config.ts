@@ -48,11 +48,11 @@ const projectConfig: Config = {
     publicPath: process.env.ASSET_PREFIX ? process.env.ASSET_PREFIX : '/static/',
 
     // Assets dist folders
-    imagesOutputPath: '/images/',
-    svgOutputPath: '/svg/',
-    fontsOutputPath: '/fonts/',
-    jsOutputPath: '/js/',
-    cssOutputPath: '/css/',
+    imagesOutputPath: 'images/',
+    svgOutputPath: 'svg/',
+    fontsOutputPath: 'fonts/',
+    jsOutputPath: 'js/',
+    cssOutputPath: 'css/',
 
     // Service worker options
     injectManifest: false,
@@ -60,6 +60,7 @@ const projectConfig: Config = {
 
     // Webpack copy config
     copy: null,
+    contenthash: false,
 };
 
 // Overwrite config
