@@ -4,7 +4,7 @@ const fontsLoader = (isClient = true) => {
         name: '[name].[ext]',
         publicPath: removeDoubleSlash(`${devConfig.publicPath}${devConfig.fontsOutputPath}`),
         outputPath: removeDoubleSlash(`${devConfig.publicPath}${devConfig.fontsOutputPath}`),
-        emitFile: !isClient,
+        emitFile: isClient,
     };
 
     return {

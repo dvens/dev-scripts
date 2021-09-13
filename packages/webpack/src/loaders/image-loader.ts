@@ -6,7 +6,7 @@ const imageLoader = (isClient = true) => {
         name: '[name].[ext]',
         publicPath: removeDoubleSlash(`${devConfig.publicPath}${devConfig.imagesOutputPath}`),
         outputPath: removeDoubleSlash(`${devConfig.publicPath}${devConfig.imagesOutputPath}`),
-        emitFile: !isClient,
+        emitFile: isClient,
     };
 
     const imageWebpackLoaderOptions = {
