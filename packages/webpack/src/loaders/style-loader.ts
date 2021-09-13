@@ -63,12 +63,17 @@ const configureStyleLoader = (options = {}) => {
 function getStyleLoaders(cssLoaderOptions = {}, extract: boolean): any {
     const sourceMap = isDevelopment;
     const styleLoaders = [
-        extract && {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-                esModule: false,
+        extract &&
+            !isDevelopment && {
+                loader: MiniCssExtractPlugin.loader,
+                options: {
+                    esModule: false,
+                },
             },
-        },
+        extract &&
+            isDevelopment && {
+                loader: 'style-loader',
+            },
         {
             loader: 'css-loader',
             options: {

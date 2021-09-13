@@ -22,6 +22,7 @@ export const getPlugins = (isClient: boolean = true, manifestSharedSeed = {}) =>
                 failOnError: true,
             }),
         isClient &&
+            !isDevelopment &&
             new MiniCssExtractPlugin({
                 filename: normalizePath(
                     `${devConfig.cssOutputPath}${
