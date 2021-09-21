@@ -37,7 +37,7 @@ export const createClientBaseConfig = (options: ClientBase) => {
 
     const config = {
         ...sharedConfig,
-        target: false,
+        target: options.legacy ? ['web', 'es5'] : 'web',
         name: options.legacy ? 'legacy-client' : 'client',
         entry,
         plugins: [...getPlugins(true, options.manifestSharedSeed)],
