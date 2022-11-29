@@ -30,7 +30,6 @@ export const createServerBaseConfig = (options: ServerBase) => {
                 // Javascript/Typescript
                 ...configureBabelLoader({
                     includedPackages: options.includedPackages,
-                    legacy: false,
                 }),
 
                 //CSS/SASS

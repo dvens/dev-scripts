@@ -4,13 +4,7 @@ import { existsSync } from 'fs';
 const extendFilePath = `${projectDirectory}/babel.extend.js`;
 const hasExtendFile = existsSync(extendFilePath);
 
-const configureBabelLoader = ({
-    includedPackages = [],
-    legacy = false,
-}: {
-    includedPackages?: any[];
-    legacy?: boolean;
-}) => {
+const configureBabelLoader = ({ includedPackages = [] }: { includedPackages?: any[] }) => {
     let options = {
         plugins: [
             '@babel/syntax-dynamic-import',
@@ -21,10 +15,8 @@ const configureBabelLoader = ({
             [
                 '@babel/preset-env',
                 {
-                    targets: legacy ? ['ie 11'] : findSupportedBrowsers(),
-                    useBuiltIns: false,
-                    modules: false,
-                    debug: false,
+                    targets: findSupportedBrowsers(),
+                    useBuiltIns: 'usage',
                 },
             ],
         ],

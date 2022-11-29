@@ -41,9 +41,6 @@ const projectConfig: Config = {
     serverDist: resolveApp('build/server'),
     clientDist: '',
 
-    // Config legacy prefix
-    legacyPrefix: 'legacy-',
-
     // Config publicpath
     publicPath: process.env.ASSET_PREFIX ? process.env.ASSET_PREFIX : '/static/',
 

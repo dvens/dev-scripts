@@ -15,7 +15,6 @@ import { sharedConfig } from '../shared-config';
 const isProduction = getDefaultMode() === 'production';
 
 export interface ClientBase {
-    legacy?: boolean;
     includedPackages?: string[] | RegExp[];
     manifestSharedSeed?: any;
 }
@@ -23,22 +22,16 @@ export interface ClientBase {
 export const createClientBaseConfig = (options: ClientBase) => {
     const contenthash = isProduction && devConfig.contenthash ? '.[contenthash]' : '';
     const outputFilename = `${devConfig.jsOutputPath}[name]${contenthash}.js`;
-    const outputChunkFilename = `${devConfig.jsOutputPath}${
-        options.legacy ? `chunks/${devConfig.legacyPrefix}` : 'chunks/'
-    }[name]${contenthash}.js`;
+    const outputChunkFilename = `${devConfig.jsOutputPath}chunks/[name]${contenthash}.js`;
 
-    const entry = options.legacy
-        ? {
-              [`${devConfig.legacyPrefix}main`]: devConfig.clientEntry,
-          }
-        : {
-              main: devConfig.clientEntry,
-          };
+    const entry = {
+        main: devConfig.clientEntry,
+    };
 
     const config = {
         ...sharedConfig,
-        target: options.legacy ? ['web', 'es5'] : 'web',
-        name: options.legacy ? 'legacy-client' : 'client',
+        target: 'web',
+        name: 'client',
         entry,
         plugins: [...getPlugins(true, options.manifestSharedSeed)],
         module: {
@@ -46,7 +39,6 @@ export const createClientBaseConfig = (options: ClientBase) => {
                 // Javascript/Typescript
                 ...configureBabelLoader({
                     includedPackages: options.includedPackages,
-                    legacy: options.legacy,
                 }),
 
                 //CSS/SASS

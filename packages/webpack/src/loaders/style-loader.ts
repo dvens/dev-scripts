@@ -22,8 +22,8 @@ const configureStyleLoader = (options = {}) => {
             {
                 modules: {
                     localIdentName: '[local]',
-                    mode: 'local',
                     exportGlobals: true,
+                    // Used for CSS modules to export the same class names as the ones used in the CSS files we generated for the client.
                     exportOnlyLocals: !defaultOptions.isClient,
                 },
             },
@@ -39,7 +39,6 @@ const configureStyleLoader = (options = {}) => {
             {
                 modules: false,
             },
-
             defaultOptions.isClient,
         ),
     };
@@ -66,9 +65,6 @@ function getStyleLoaders(cssLoaderOptions = {}, extract: boolean): any {
         extract &&
             !isDevelopment && {
                 loader: MiniCssExtractPlugin.loader,
-                options: {
-                    esModule: false,
-                },
             },
         extract &&
             isDevelopment && {
