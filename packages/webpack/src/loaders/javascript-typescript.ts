@@ -6,17 +6,14 @@ const hasExtendFile = existsSync(extendFilePath);
 
 const configureBabelLoader = ({ includedPackages = [] }: { includedPackages?: any[] }) => {
     let options = {
-        plugins: [
-            '@babel/syntax-dynamic-import',
-            '@babel/plugin-proposal-class-properties',
-            '@babel/plugin-proposal-object-rest-spread',
-        ],
+        plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-transform-runtime'],
         presets: [
             [
                 '@babel/preset-env',
                 {
                     targets: findSupportedBrowsers(),
-                    useBuiltIns: 'usage',
+                    useBuiltIns: 'entry',
+                    corejs: '3.6',
                 },
             ],
         ],

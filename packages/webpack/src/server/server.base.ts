@@ -52,7 +52,7 @@ export const createServerBaseConfig = (options: ServerBase) => {
             __filename: false,
             __dirname: false,
         },
-        externals: ['./asset-manifest.json', './polyfills-manifest.json', nodeExternals()],
+        externals: ['./asset-manifest.json', nodeExternals()],
     };
 
     return config;
