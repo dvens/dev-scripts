@@ -1,5 +1,5 @@
 import { devConfig, normalizePath } from '@dev-scripts/shared';
-import * as nodeExternals from 'webpack-node-externals';
+const nodeExternals = require('webpack-node-externals');
 
 // Loaders
 import fontsLoader from '../loaders/fonts-loader';
