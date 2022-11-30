@@ -16,6 +16,7 @@ const configureBabelLoader = ({ includedPackages = [] }: { includedPackages?: an
                     corejs: '3.6',
                 },
             ],
+            ['@babel/preset-typescript', { isTSX: true, allExtensions: true }],
         ],
         cacheDirectory: getDefaultMode() === 'development',
     };
@@ -32,9 +33,6 @@ const configureBabelLoader = ({ includedPackages = [] }: { includedPackages?: an
                 {
                     loader: 'babel-loader',
                     options,
-                },
-                {
-                    loader: 'ts-loader',
                 },
             ],
         },
