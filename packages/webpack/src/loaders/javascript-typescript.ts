@@ -6,7 +6,18 @@ const hasExtendFile = existsSync(extendFilePath);
 
 const configureBabelLoader = ({ includedPackages = [] }: { includedPackages?: any[] }) => {
     let options = {
-        plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-transform-runtime'],
+        plugins: [
+            '@babel/plugin-proposal-class-properties',
+            '@babel/plugin-transform-runtime',
+            [
+                '@babel/plugin-transform-react-jsx',
+                {
+                    throwIfNamespace: false,
+                    runtime: 'automatic',
+                    importSource: '@atomify',
+                },
+            ],
+        ],
         presets: [
             [
                 '@babel/preset-env',
@@ -16,7 +27,10 @@ const configureBabelLoader = ({ includedPackages = [] }: { includedPackages?: an
                     corejs: '3.6',
                 },
             ],
-            ['@babel/preset-typescript', { isTSX: true, allExtensions: true }],
+            [
+                '@babel/preset-typescript',
+                { isTSX: true, allExtensions: true, jsxPragma: 'h', jsxPragmaFrag: 'Fragment' },
+            ],
         ],
         cacheDirectory: getDefaultMode() === 'development',
     };

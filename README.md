@@ -1,6 +1,7 @@
 # @dev-scripts
 
 TODO
+- add https://github.com/itsjavi/jsx-runtime
 - add regenerator runtime for the client only with the following settings: https://github.com/vercel/next.js/blob/canary/packages/next/build/babel/preset.ts or
 - update babel
 - Add esbuild instead of terser
