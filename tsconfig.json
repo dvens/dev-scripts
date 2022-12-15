@@ -20,7 +20,7 @@
         "allowSyntheticDefaultImports": true,
         "allowUnreachableCode": false,
         "forceConsistentCasingInFileNames": true,
-        "jsx": "react",
+        "jsx": "preserve",
         "jsxFactory": "h",
         "strictNullChecks": true,
         "noEmitOnError": true
